@@ -21,6 +21,18 @@ Solve the problem that Maven has a timestamp difference of 8 hours. Specifically
                 </execution>
             </executions>
         </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.3.0</version>
+        <configuration>
+            <archive>
+                <manifestEntries>
+                    <Build-Time>${local.build.timestamp}</Build-Time>
+                </manifestEntries>
+            </archive>
+        </configuration>
+        </plugin>
     </plugins>
 </build>
 
